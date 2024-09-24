@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SUPABASE_URL = os.getenv("https://yzhjsnpriarialevpvpb.supabase.co/")
-SUPABASE_KEY = os.getenv("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl6aGpzbnByaWFyaWFsZXZwdnBiIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNzEzNjM5OSwiZXhwIjoyMDQyNzEyMzk5fQ.MzShIlJ4pnlrVwSgTt5G_p7bKM1NhNYTPIAviiWXEvg")
+SUPABASE_URL = os.getenv('SUPABASE_URL')
+SUPABASE_KEY = os.getenv('SUPABASE_KEY')
 
 def connect_to_db():
     try:
