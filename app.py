@@ -1,21 +1,23 @@
 from flask import Flask, jsonify, request
 import pyodbc
-import privete
+from pivete.query_builder import query, query1, query2
+from supabase import create_client, Client
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  
+
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 app = Flask(__name__)
 
-# Função para conectar ao SQL Server
 def connect_to_db():
     try:
-        conn = pyodbc.connect(
-            'DRIVER={ODBC Driver 17 for SQL Server};'
-            'SERVER=TOBI-PC\\SQLEXPRESS;' 
-            'DATABASE=CRIARPG;'
-            'Trusted_Connection=yes;'
-        )
-        return conn
+        supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+        return supabase
     except Exception as e:
-        print(f"Erro ao conectar ao banco de dados: {e}")
+        print(f"Erro ao conectar ao Supabase: {e}")
         return None
 
 # Rota exemplo para executar uma query
@@ -24,18 +26,11 @@ def execute_query():
     query = request.json.get('query')
     conn = connect_to_db()
     if conn:
-        cursor = conn.cursor()
         try:
-            sql_query, params = privete.query2(0)
-            cursor.execute(sql_query, params)
-            columns = [column[0] for column in cursor.description]
-            results = [dict(zip(columns, row)) for row in cursor.fetchall()]
+            results = pivete.query_builder.query1(2)
             return jsonify(results)
         except Exception as e:
             return jsonify({"message": f"Erro ao executar a query: {e}"}), 400
-        finally:
-            cursor.close()
-            conn.close()
     else:
         return jsonify({"message": "Falha na conexão."}), 500
 
