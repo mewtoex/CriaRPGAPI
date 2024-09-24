@@ -1,7 +1,9 @@
 from flask import Blueprint
+from flask_cors import CORS 
 from app.controler.user_controler import login_controller_user, save_controller_user, update_controller_user
 
 api_blueprint = Blueprint('api', __name__)
+CORS(api_blueprint)
 
 @api_blueprint.route('/login', methods=['POST'])  
 def login():
