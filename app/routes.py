@@ -4,7 +4,7 @@ from app.controler.user_controler import login_controller_user, save_controller_
 
 api_blueprint = Blueprint('api', __name__)
 
-CORS(api_blueprint, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+CORS(api_blueprint, resources={r"/*": {"origins": "*"}})
 
 @api_blueprint.route('/login', methods=['POST'])  
 def login():
