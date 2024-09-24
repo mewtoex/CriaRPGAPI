@@ -2,7 +2,7 @@
 runtime = "python3.10"
 
 [phases.install]
-command = "pip install -r requirements.txt"
+command = "python -m venv /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt"
 
 [phases.start]
-command = "python run.py"
+command = ". /opt/venv/bin/activate && python run.py"
