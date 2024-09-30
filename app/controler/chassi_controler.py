@@ -1,6 +1,6 @@
 import os
 from flask import jsonify, request
-from  controler.user.query_builder import login_bd, save_user, update_user
+from user.query_builder import login_bd, save_user, update_user
 
 def login_controller_user():  
     data = request.get_json()

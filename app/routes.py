@@ -17,3 +17,4 @@ def save_user():
 @api_blueprint.route('/user/update', methods=['POST'])  
 def update_user():
     return update_controller_user()
+
