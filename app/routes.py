@@ -29,7 +29,6 @@ def login():
     return login_controller_user()
 
 @api_blueprint.route('/user/new', methods=['POST'])
-@token_required  
 def save_user():
     return save_controller_user()
 
