@@ -26,7 +26,7 @@ def login_bd(user, password):
                 return None
         return response.data
     except Exception as e:
-        print(f"Erro ao conectar ao Supabase: {e}")
+        print(f"Erro ao fazer login: {e}")
         return None
     
 def save_user(user, password):
