@@ -10,7 +10,7 @@ def busca_pivete_por_user(user_id):
     response = supabase.table('pivete').select('*').eq('id_user', user_id).single().execute()
     return response.data
 
-def insert_cria(pivete):
+def insert_pivete(pivete):
     pivete_data = {
         'nome': pivete['nome'],
         'privete_type': pivete['privete_type'],
@@ -21,7 +21,7 @@ def insert_cria(pivete):
     return response
 
 
-def alterar_cria(pivete):
+def alterar_pivete(pivete):
     pivete_data = {
         'nome': pivete['nome'],
     }

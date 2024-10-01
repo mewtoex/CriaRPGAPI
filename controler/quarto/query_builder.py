@@ -7,16 +7,16 @@ from app.db import connect_to_db
 supabase = connect_to_db()
 
 
-def vinculo_list():
-    response = supabase.table('vinculo').select("*").execute()
+def quarto_list():
+    response = supabase.table('quarto').select("*").execute()
     return response.data
 
-def vinculo_list_type(id):
-    response = supabase.table('vinculo').select("*").eq('privete_id', id).execute()
+def quarto_list_type(id):
+    response = supabase.table('quarto').select("*").eq('privete_id', id).execute()
     return response.data
 
-def save_vinculo(vinculo):
-    supabase.table('vinculo').insert(vars(vinculo)).execute()
+def save_quarto(quarto):
+    supabase.table('quarto').insert(vars(quarto)).execute()
 
-def update_vinculo(vinculo):
-    supabase.table('vinculo').update(vars(vinculo)).eq('id', vinculo.id).execute()
+def update_quarto(quarto):
+    supabase.table('quarto').update(vars(quarto)).eq('id', quarto.id).execute()
