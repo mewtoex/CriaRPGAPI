@@ -1,6 +1,12 @@
 import os
+import jwt
+import datetime
 from flask import jsonify, request
-from  controler.user.query_builder import login_bd, save_user, update_user
+from controler.user.query_builder import login_bd, save_user, update_user
+from dotenv import load_dotenv
+
+load_dotenv()
+SECRET_KEY = os.getenv('SUPABASE_KEY')
 
 def login_controller_user():  
     data = request.get_json()
@@ -14,7 +20,12 @@ def login_controller_user():
 
     try:
         if results:
-            return jsonify(results), 200
+            token = jwt.encode({
+                'user_id': results,  
+                'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=240)  
+            }, SECRET_KEY, algorithm='HS256')
+
+            return jsonify({"token": token}), 200
         else:
             return jsonify({"message": "Usuário ou senha inválidos."}), 200
     except Exception as e:
