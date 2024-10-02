@@ -41,305 +41,305 @@ def update_user():
 #region Vinculo
 @api_blueprint.route('/vinculo/list', methods=['POST'])  
 @token_required
-def list_get_vinculos():
+def list_get_vinculos(user_id):
     return vinculo_list_get()
 
 @api_blueprint.route('/vinculo/list_gettype', methods=['POST'])  
 @token_required
-def list_get_vinculo_types():
+def list_get_vinculo_types(user_id):
     return vinculo_list_get_type()
 
 @api_blueprint.route('/vinculo/new', methods=['POST'])  
 @token_required
-def save_vinculo():
+def save_vinculo(user_id):
     return save_controller_vinculo()
 
 @api_blueprint.route('/vinculo/update', methods=['POST'])  
 @token_required
-def update_vinculo():
+def update_vinculo(user_id):
     return update_controller_vinculo()
 #endregion
 
 #region Tecnica
 @api_blueprint.route('/tecnica/list', methods=['POST']) 
 @token_required 
-def list_get_tecnicas():
+def list_get_tecnicas(user_id):
     return tecnica_list_get()
 
 @api_blueprint.route('/tecnica/tecnicatype', methods=['POST'])  
 @token_required
-def list_get_tecnica_types():
+def list_get_tecnica_types(user_id):
     return tecnica_list_get_filter()
 
 @api_blueprint.route('/tecnica/new', methods=['POST'])  
 @token_required
-def save_tecnica():
+def save_tecnica(user_id):
     return save_controller_tecnica()
 
 @api_blueprint.route('/tecnica/update', methods=['POST'])  
 @token_required
-def update_tecnica():
+def update_tecnica(user_id):
     return update_controller_tecnica()
 #endregion
 
 #region Quarto
 @api_blueprint.route('/quarto/list', methods=['POST'])  
 @token_required
-def list_get_quartos():
+def list_get_quartos(user_id):
     return quarto_list_get()
 
 @api_blueprint.route('/quarto/list_gettype', methods=['POST'])  
 @token_required
-def list_get_quarto_types():
+def list_get_quarto_types(user_id):
     return quarto_list_get_type()
 
 @api_blueprint.route('/quarto/new', methods=['POST'])  
 @token_required
-def save_quarto():
+def save_quarto(user_id):
     return save_controller_quarto()
 
 @api_blueprint.route('/quarto/update', methods=['POST'])  
 @token_required
-def update_quarto():
+def update_quarto(user_id):
     return update_controller_quarto()
 #endregion
 
 #region Poderes
 @api_blueprint.route('/poderes/list', methods=['POST'])  
 @token_required
-def list_get_poderes():
+def list_get_poderes(user_id):
     return poderes_list_get()
 
 @api_blueprint.route('/poderes/list_gettype', methods=['POST'])  
 @token_required
-def list_get_poderes_types():
+def list_get_poderes_types(user_id):
     return poderes_list_get_type()
 
 @api_blueprint.route('/poderes/new', methods=['POST']) 
 @token_required 
-def save_poder():
+def save_poder(user_id):
     return save_controller_poderes()
 
 @api_blueprint.route('/poderes/update', methods=['POST'])  
 @token_required
-def update_poder():
+def update_poder(user_id):
     return update_controller_poderes()
 #endregion
 
 #region Pivete type
 @api_blueprint.route('/pivetetype/list', methods=['POST'])  
 @token_required
-def list_get_pivete_types():
+def list_get_pivete_types(user_id):
     return pivete_type_list_get()
 
 @api_blueprint.route('/pivetetype/new', methods=['POST'])  
 @token_required
-def save_pivete_type():
+def save_pivete_type(user_id):
     return save_pivete_type()
 
 @api_blueprint.route('/pivetetype/update', methods=['POST'])  
 @token_required
-def update_pivete_type():
+def update_pivete_type(user_id):
     return update_pivete_type()
 #endregion
 
 #region Pivete
 @api_blueprint.route('/pivete/list', methods=['POST'])  
 @token_required
-def list_get_pivetes():
+def list_get_pivetes(user_id):
     return busca_pivete_por_user() 
 
 @api_blueprint.route('/pivete/new', methods=['POST'])  
 @token_required
-def save_pivete():
+def save_pivete(user_id):
     return save_controller_pivete()
 
 @api_blueprint.route('/pivete/update', methods=['POST'])  
 @token_required
-def update_pivete():
+def update_pivete(user_id):
     return update_controller_pivete()
 #endregion
 
 #region Pessonalidade
 @api_blueprint.route('/pessonalidade/list', methods=['POST'])  
 @token_required
-def list_get_personalidades():
+def list_get_personalidades(user_id):
     return personalidade_list_get()
 
 @api_blueprint.route('/pessonalidade/new', methods=['POST'])  
 @token_required
-def save_personalidade():
+def save_personalidade(user_id):
     return save_controller_personalidade()
 
 @api_blueprint.route('/pessonalidade/update', methods=['POST'])  
 @token_required
-def update_personalidade():
+def update_personalidade(user_id):
     return update_controller_personalidade()
 #endregion
 
 #region Pecas
 @api_blueprint.route('/pecas/list', methods=['POST'])  
 @token_required
-def list_get_pecas():
+def list_get_pecas(user_id):
     return pecas_list_get()
 
 @api_blueprint.route('/pecas/list_gettype', methods=['POST'])  
 @token_required
-def list_get_pecas_types():
+def list_get_pecas_types(user_id):
     return pecas_list_get_type()
 
 @api_blueprint.route('/pecas/new', methods=['POST'])  
 @token_required
-def save_pecas():
+def save_pecas(user_id):
     return save_controller_pecas()
 
 @api_blueprint.route('/pecas/update', methods=['POST'])  
 @token_required
-def update_pecas():
+def update_pecas(user_id):
     return update_controller_pecas()
 #endregion
 
 #region Objeto
 @api_blueprint.route('/objeto/list', methods=['POST'])  
 @token_required
-def list_get_objetos():
+def list_get_objetos(user_id):
     return objeto_list_get()
 
 @api_blueprint.route('/objeto/list_gettype', methods=['POST'])  
 @token_required
-def list_get_objeto_types():
+def list_get_objeto_types(user_id):
     return objeto_list_get_type()
 
 @api_blueprint.route('/objeto/new', methods=['POST'])  
 @token_required
-def save_objeto():
+def save_objeto(user_id):
     return save_controller_objeto()
 
 @api_blueprint.route('/objeto/update', methods=['POST'])  
 @token_required
-def update_objeto():
+def update_objeto(user_id):
     return update_controller_objeto()
 #endregion
 
 #region Objetivo
 @api_blueprint.route('/objetivo/list', methods=['POST'])  
 @token_required
-def list_get_objetivos():
+def list_get_objetivos(user_id):
     return objetivo_list_get()
 
 @api_blueprint.route('/objetivo/list_gettype', methods=['POST'])  
 @token_required
-def list_get_objetivo_types():
+def list_get_objetivo_types(user_id):
     return objetivo_list_get_type()
 
 @api_blueprint.route('/objetivo/new', methods=['POST'])  
 @token_required
-def save_objetivo():
+def save_objetivo(user_id):
     return save_controller_objetivo()
 
 @api_blueprint.route('/objetivo/update', methods=['POST'])  
 @token_required
-def update_objetivo():
+def update_objetivo(user_id):
     return update_controller_objetivo()
 #endregion
 
 #region Motivo
 @api_blueprint.route('/motivo/list', methods=['POST'])  
 @token_required
-def list_get_motivos():
+def list_get_motivos(user_id):
     return motivo_list_get()
 
 @api_blueprint.route('/motivo/list_gettype', methods=['POST'])  
 @token_required
-def list_get_motivo_types():
+def list_get_motivo_types(user_id):
     return motivo_list_get_type()
 
 @api_blueprint.route('/motivo/new', methods=['POST'])  
 @token_required
-def save_motivo():
+def save_motivo(user_id):
     return save_controller_motivo()
 
 @api_blueprint.route('/motivo/update', methods=['POST'])  
 @token_required
-def update_motivo():
+def update_motivo(user_id):
     return update_controller_motivo()
 #endregion
 
 #region Fraquezas
 @api_blueprint.route('/fraquezas/list', methods=['POST'])  
 @token_required
-def list_get_fraquezas():
+def list_get_fraquezas(user_id):
     return fraqueza_list_get()
 
 @api_blueprint.route('/fraquezas/list_gettype', methods=['POST'])  
 @token_required
-def list_get_fraquezas_types():
+def list_get_fraquezas_types(user_id):
     return fraqueza_list_get_type()
 
 @api_blueprint.route('/fraquezas/new', methods=['POST'])  
 @token_required
-def save_fraqueza():
+def save_fraqueza(user_id):
     return save_controller_fraqueza()
 
 @api_blueprint.route('/fraquezas/update', methods=['POST'])  
 @token_required
-def update_fraqueza():
+def update_fraqueza(user_id):
     return update_controller_fraqueza()
 #endregion
 
 #region Especial
 @api_blueprint.route('/especial/list', methods=['POST'])  
 @token_required
-def list_get_especiais():
+def list_get_especiais(user_id):
     return especial_list_get()
 
 @api_blueprint.route('/especial/list_gettype', methods=['POST'])  
 @token_required
-def list_get_especial_types():
+def list_get_especial_types(user_id):
     return especial_list_get_type()
 
 @api_blueprint.route('/especial/new', methods=['POST'])  
 @token_required
-def save_especial():
+def save_especial(user_id):
     return save_controller_especial()
 
 @api_blueprint.route('/especial/update', methods=['POST'])  
 @token_required
-def update_especial():
+def update_especial(user_id):
     return update_controller_especial()
 #endregion
 
 #region Elemento
 @api_blueprint.route('/elemento/list', methods=['POST'])  
 @token_required
-def list_get_elementos():
+def list_get_elementos(user_id):
     return elemento_list_get()
 
 @api_blueprint.route('/elemento/new', methods=['POST'])  
 @token_required
-def save_elemento():
+def save_elemento(user_id):
     return save_controller_elemento()
 
 @api_blueprint.route('/elemento/update', methods=['POST'])  
 @token_required
-def update_elemento():
+def update_elemento()user_id:
     return update_controller_elemento()
 #endregion
 
 #region Cria
 @api_blueprint.route('/cria/list', methods=['POST'])  
 @token_required
-def list_get_crias():
+def list_get_crias(user_id):
     return busca_cria_com_relacoes()
 
 @api_blueprint.route('/cria/new', methods=['POST'])  
 @token_required
-def save_cria():
+def save_cria(user_id):
     return save_controller_cria()
 
 @api_blueprint.route('/cria/update', methods=['POST'])  
 @token_required
-def update_cria():
+def update_cria(user_id):
     return update_controller_cria()
 #endregion
 
@@ -351,11 +351,11 @@ def list_get_chassis(user_id):
 
 @api_blueprint.route('/chassi/new', methods=['POST'])  
 @token_required
-def save_chassi():
+def save_chassi(user_id):
     return save_controller_chassi()
 
 @api_blueprint.route('/chassi/update', methods=['POST'])  
 @token_required
-def update_chassi():
+def update_chassi(user_id):
     return update_controller_chassi()
 #endregion
