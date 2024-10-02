@@ -17,6 +17,6 @@ def update_tecnica(tecnica):
     supabase.table('tecnica').update(vars(tecnica)).eq('id', tecnica.id).execute()
 
 def tecnica_list_filter(pre):
-    response = supabase.table('tecnicas').select("*").like('prerequisito', pre).execute()
+    response = supabase.table('tecnicas').select("*").like('prerequisito', f"%{pre}%").execute()
     return response.data
 

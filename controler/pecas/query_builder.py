@@ -19,6 +19,6 @@ def update_pecas(pecas):
 
 
 def pecas_list_type(id):
-    response = supabase.table('pecas').select("*").or_('id.eq.' + str(id) + ',id.is.null').execute()
+    response = supabase.table('pecas').select("*").or_('cria_type.eq.' + str(id) + ',cria_type.is.null').execute()
     return response.data
 
