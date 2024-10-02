@@ -322,7 +322,7 @@ def save_elemento(user_id):
 
 @api_blueprint.route('/elemento/update', methods=['POST'])  
 @token_required
-def update_elemento()user_id:
+def update_elemento(user_id):
     return update_controller_elemento()
 #endregion
 
