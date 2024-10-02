@@ -2,7 +2,7 @@ import os
 from flask import jsonify, request
 from controler.pecas.query_builder import save_pecas, update_pecas, pecas_list, pecas_list_type
 
-def pecas_list():  
+def pecas_list_get():  
     results = pecas_list()
 
     try:
@@ -14,7 +14,7 @@ def pecas_list():
         return jsonify({"message": str(e)}), 500
     
 
-def pecas_list_type():  
+def pecas_list_get_type():  
     data = request.get_json()
     type_cria = data.get('idType')
     results = pecas_list_type(type_cria)

@@ -2,7 +2,7 @@ import os
 from flask import jsonify, request
 from controler.poderes.query_builder import save_poderes, update_poderes, poderes_list, poderes_list_type
 
-def poderes_list():  
+def poderes_list_get():  
     results = poderes_list()
 
     try:
@@ -14,7 +14,7 @@ def poderes_list():
         return jsonify({"message": str(e)}), 500
     
 
-def poderes_list_type():  
+def poderes_list_get_type():  
     data = request.get_json()
     type_cria = data.get('idType')
     results = poderes_list_type(type_cria)

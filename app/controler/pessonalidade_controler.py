@@ -2,7 +2,7 @@ import os
 from flask import jsonify, request
 from controler.personalidade.query_builder import save_personalidade, update_personalidade, personalidade_list
 
-def personalidade_list():  
+def personalidade_list_get():  
     results = personalidade_list()
 
     try:

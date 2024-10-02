@@ -2,7 +2,7 @@ import os
 from flask import jsonify, request
 from controler.chassi.query_builder import save_chassi, update_chassi, chassi_list
 
-def chassi_list():  
+def chassi_list_get():  
     results = chassi_list()
 
     try:

@@ -2,7 +2,7 @@ import os
 from flask import jsonify, request
 from controler.elemento.query_builder import save_elemento, update_elemento, elemento_list
 
-def elemento_list():  
+def elemento_list_get():  
     results = elemento_list()
 
     try:

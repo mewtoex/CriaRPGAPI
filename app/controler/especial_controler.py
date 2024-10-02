@@ -2,7 +2,7 @@ import os
 from flask import jsonify, request
 from controler.especial.query_builder import save_especial, update_especial, especial_list, especial_list_type
 
-def especial_list():  
+def especial_list_get():  
     results = especial_list()
 
     try:
@@ -14,7 +14,7 @@ def especial_list():
         return jsonify({"message": str(e)}), 500
 
 
-def especial_list_type():  
+def especial_list_get_type():  
     data = request.get_json()
     type_cria = data.get('idType')
     results = especial_list_type(type_cria)

@@ -2,7 +2,7 @@ import os
 from flask import jsonify, request
 from controler.pivete_type.query_builder import save_pivete_type, update_pivete_type, pivete_type_list
 
-def pivete_type_list():  
+def pivete_type_list_get():  
     results = pivete_type_list()
 
     try:

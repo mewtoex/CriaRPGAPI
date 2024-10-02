@@ -2,7 +2,7 @@ import os
 from flask import jsonify, request
 from controler.objetivo.query_builder import save_objetivo, update_objetivo, objetivo_list, objetivo_list_type
 
-def objetivo_list():  
+def objetivo_list_get():  
     results = objetivo_list()
 
     try:
@@ -14,7 +14,7 @@ def objetivo_list():
         return jsonify({"message": str(e)}), 500
     
 
-def objetivo_list_type():  
+def objetivo_list_get_type():  
     data = request.get_json()
     type_cria = data.get('idType')
     results = objetivo_list_type(type_cria)

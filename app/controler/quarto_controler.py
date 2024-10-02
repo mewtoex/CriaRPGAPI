@@ -2,7 +2,7 @@ import os
 from flask import jsonify, request
 from controler.quarto.query_builder import save_quarto, update_quarto, quarto_list, quarto_list_type
 
-def quarto_list():  
+def quarto_list_get():  
     results = quarto_list()
 
     try:
@@ -14,7 +14,7 @@ def quarto_list():
         return jsonify({"message": str(e)}), 500
     
 
-def quarto_list_type():  
+def quarto_list_get_type():  
     data = request.get_json()
     type_cria = data.get('idType')
     results = quarto_list_type(type_cria)

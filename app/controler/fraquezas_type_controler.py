@@ -2,7 +2,7 @@ import os
 from flask import jsonify, request
 from controler.fraqueza.query_builder import save_fraqueza, update_fraqueza, fraqueza_list, fraqueza_list_type
 
-def fraqueza_list():  
+def fraqueza_list_get():  
     results = fraqueza_list()
 
     try:
@@ -14,7 +14,7 @@ def fraqueza_list():
         return jsonify({"message": str(e)}), 500
     
 
-def fraqueza_list_type():  
+def fraqueza_list_get_type():  
     data = request.get_json()
     type_cria = data.get('idType')
     results = fraqueza_list_type(type_cria)

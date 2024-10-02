@@ -2,7 +2,7 @@ import os
 from flask import jsonify, request
 from controler.vinculo.query_builder import save_vinculo, update_vinculo, vinculo_list, vinculo_list_type
 
-def vinculo_list():  
+def vinculo_list_get():  
     results = vinculo_list()
 
     try:
@@ -14,7 +14,7 @@ def vinculo_list():
         return jsonify({"message": str(e)}), 500
     
 
-def vinculo_list_type():  
+def vinculo_list_get_type():  
     data = request.get_json()
     type_cria = data.get('idType')
     results = vinculo_list_type(type_cria)

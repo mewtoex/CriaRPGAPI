@@ -2,7 +2,7 @@ import os
 from flask import jsonify, request
 from controler.objeto.query_builder import save_objeto, update_objeto, objeto_list, objeto_list_type
 
-def objeto_list():  
+def objeto_list_get():  
     results = objeto_list()
 
     try:
@@ -14,7 +14,7 @@ def objeto_list():
         return jsonify({"message": str(e)}), 500
     
 
-def objeto_list_type():  
+def objeto_list_get_type():  
     data = request.get_json()
     type_cria = data.get('idType')
     results = objeto_list_type(type_cria)

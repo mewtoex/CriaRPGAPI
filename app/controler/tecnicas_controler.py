@@ -2,7 +2,7 @@ import os
 from flask import jsonify, request
 from controler.tecnica.query_builder import save_tecnica, update_tecnica, tecnica_list, tecnica_list_filter
 
-def tecnica_list():  
+def tecnica_list_get():  
     results = tecnica_list()
 
     try:
@@ -14,7 +14,7 @@ def tecnica_list():
         return jsonify({"message": str(e)}), 500
     
 
-def tecnica_list_filter():  
+def tecnica_list_get_filter():  
     data = request.get_json()
     _filter = data.get('filter')
     results = tecnica_list_filter(_filter)
