@@ -25,7 +25,7 @@ def login_controller_user():
                 'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=240)  
             }, SECRET_KEY, algorithm='HS256')
 
-            return jsonify({"token": token}), 200
+            return jsonify({"token": token,'id': results }), 200
         else:
             return jsonify({"message": "Usuário ou senha inválidos."}), 200
     except Exception as e:
